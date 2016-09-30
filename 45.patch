@@ -1,0 +1,39 @@
+From cf32f714b154b04203113eea2fd9c0741e79dcf6 Mon Sep 17 00:00:00 2001
+From: Ben Rosser <rosser.bjr@gmail.com>
+Date: Mon, 15 Aug 2016 19:43:28 -0400
+Subject: [PATCH] Also version the .so files of the plugins.
+
+Use the same versions as current cAudio, for now.
+---
+ Plugins/EAXLegacyPreset/CMakeLists.txt | 5 ++++-
+ Plugins/mp3Decoder/CMakeLists.txt      | 5 ++++-
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/Plugins/EAXLegacyPreset/CMakeLists.txt b/Plugins/EAXLegacyPreset/CMakeLists.txt
+index 1ca4ec4..e15b259 100644
+--- a/Plugins/EAXLegacyPreset/CMakeLists.txt
++++ b/Plugins/EAXLegacyPreset/CMakeLists.txt
+@@ -25,4 +25,7 @@ if(${CAUDIO_STATIC})
+ 	ADD_DEFINITIONS(-DCAUDIO_STATIC_LIB)
+ endif()
+ 
+-install_all_targets(EAXLegacyPreset)
+\ No newline at end of file
++set_property(TARGET EAXLegacyPreset PROPERTY VERSION "2.3.0")
++set_property(TARGET EAXLegacyPreset PROPERTY SOVERSION 2 )
++
++install_all_targets(EAXLegacyPreset)
+diff --git a/Plugins/mp3Decoder/CMakeLists.txt b/Plugins/mp3Decoder/CMakeLists.txt
+index 8d16696..a621a98 100644
+--- a/Plugins/mp3Decoder/CMakeLists.txt
++++ b/Plugins/mp3Decoder/CMakeLists.txt
+@@ -25,4 +25,7 @@ if(${CAUDIO_STATIC})
+ 	ADD_DEFINITIONS(-DCAUDIO_STATIC_LIB)
+ endif()
+ 
+-install_all_targets(cAp_mp3Decoder)
+\ No newline at end of file
++set_property(TARGET cAp_mp3Decoder PROPERTY VERSION "2.3.0")
++set_property(TARGET cAp_mp3Decoder PROPERTY SOVERSION 2 )
++
++install_all_targets(cAp_mp3Decoder)
