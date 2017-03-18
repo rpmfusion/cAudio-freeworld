@@ -1,7 +1,7 @@
 # This is the upstream-preferred name of the project
 Name:           cAudio-freeworld
 Version:        2.3.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        MP3 support for cAudio
 
 # cAudio-2.3.1/Plugins/mp3Decoder/mpaudec/{bits.c,mpaudec.c} are under LGPLv2+
@@ -92,6 +92,9 @@ rm -rf %{buildroot}%{_includedir}
 %{_libdir}/libcAp_mp3Decoder.so
 
 %changelog
+* Sat Mar 18 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 2.3.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Sat Sep 17 2016 Ben Rosser <rosser.bjr@gmail.com> 2.3.1-2
 - Update license tag to zlib and LGPLv2+
 
